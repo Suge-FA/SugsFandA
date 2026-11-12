@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /teamzentrale.html
 Sitemap: https://fasalesconsulting.com/sitemap.xml
