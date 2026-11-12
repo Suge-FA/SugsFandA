@@ -51,7 +51,7 @@ export async function faAbmelden() {
   finally { faSitzungMerken(null); }
 }
 export async function faPasswortAnfordern(faPostfach) {
-  return faAnfordern('/auth/v1/recover?redirect_to=' + encodeURIComponent(faProjekt.webadresse + '/teamzentrale.html'), { method: 'POST', body: JSON.stringify({ email: faPostfach }) }, false);
+  return faAnfordern('/auth/v1/recover?redirect_to=' + encodeURIComponent(faProjekt.webadresse + '/suge/'), { method: 'POST', body: JSON.stringify({ email: faPostfach }) }, false);
 }
 export async function faPasswortErsetzen(faPasswort) {
   return faAnfordern('/auth/v1/user', { method: 'PUT', body: JSON.stringify({ password: faPasswort }) });

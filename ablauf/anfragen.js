@@ -25,7 +25,7 @@ document.querySelectorAll('form[data-fa-anfrage]').forEach((faFormular) => {
     faErsatz.href = 'mailto:' + faProjekt.postfach + '?subject=' + encodeURIComponent(faBetreff) + '&body=' + encodeURIComponent(faNachricht);
     if (!faVerbindungBereit()) {
       faErsatz.hidden = false;
-      faMelden('Ihre Angaben wurden noch nicht verschickt. Bitte öffnen Sie die vorbereitete E-Mail und senden Sie diese in Ihrem E-Mail-Programm ab.');
+      faMelden('Deine Angaben wurden noch nicht verschickt. Öffne bitte die vorbereitete E-Mail und sende sie in deinem E-Mail-Programm ab.');
       return;
     }
     faSenden.disabled = true;
@@ -39,10 +39,10 @@ document.querySelectorAll('form[data-fa-anfrage]').forEach((faFormular) => {
       const faBestaetigung = await faAntwort.json();
       if (!faAntwort.ok || !faBestaetigung.angenommen) throw new Error(faBestaetigung.fehler || 'Übermittlung fehlgeschlagen');
       faFormular.reset();
-      faMelden('Vielen Dank. Ihre Anfrage ist eingegangen. Wir melden uns bei Ihnen.', true);
+      faMelden('Danke! Deine Anfrage ist eingegangen. Wir melden uns bei dir.', true);
     } catch {
       faErsatz.hidden = false;
-      faMelden('Eine Übermittlung konnte nicht bestätigt werden. Sie können Ihre Nachricht stattdessen über die vorbereitete E-Mail senden.');
+      faMelden('Die Übermittlung konnte nicht bestätigt werden. Du kannst deine Nachricht über die vorbereitete E-Mail senden.');
     } finally {
       faSenden.disabled = false;
       faSenden.textContent = faFormular.dataset.faKnopf || 'Anfrage übermitteln';

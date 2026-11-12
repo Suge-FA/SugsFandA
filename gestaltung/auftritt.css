@@ -22,3 +22,96 @@
 @supports ((background-clip:text) or (-webkit-background-clip:text)){.fa-helltext{background-image:var(--fa-gold-schrift);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;-webkit-box-decoration-break:clone;box-decoration-break:clone}}
 @media print{.fa-helltext{background-image:none;color:#ab824a;-webkit-text-fill-color:#ab824a}}
 @media(forced-colors:active){.fa-helltext{background-image:none;color:CanvasText;-webkit-text-fill-color:CanvasText}}
+
+/* Ruhigerer Seitenaufbau; die vorhandene Blau-Gold-Palette bleibt unverändert. */
+.fa-oeffentlich{font-family:Arial,Helvetica,sans-serif}
+.fa-oeffentlich .fa-kopfzeile{min-height:92px;gap:28px}
+.fa-oeffentlich .fa-kopf .fa-wortmarke img{width:188px;max-height:76px}
+.fa-oeffentlich .fa-navigation{gap:25px;font-size:13px}
+.fa-oeffentlich .fa-navigation .fa-knopf{min-height:42px;padding:10px 18px}
+.fa-oeffentlich .fa-knopf{border-radius:8px;min-height:50px;padding:13px 22px}
+.fa-oeffentlich .fa-menuschalter{border-radius:7px;font-size:13px}
+.fa-oeffentlich .fa-ueberzeile{font-size:11px;letter-spacing:.12em;margin-bottom:22px}
+.fa-oeffentlich .fa-ueberzeile:before{border-radius:50%;width:5px;height:5px}
+.fa-oeffentlich .fa-abschnitt{padding-block:88px}
+.fa-oeffentlich .fa-abschnitt h2{font-size:clamp(2rem,3.5vw,3rem);line-height:1.14;letter-spacing:-.04em}
+.fa-oeffentlich .fa-vorspann{font-size:18px;line-height:1.75}
+.fa-oeffentlich .fa-zweiteiler{gap:76px}
+.fa-oeffentlich .fa-seitenauftakt{background:var(--fa-nacht);color:var(--fa-weiss);padding-block:66px}
+.fa-oeffentlich .fa-seitenauftakt .fa-ueberzeile{color:var(--fa-akzent)}
+.fa-oeffentlich .fa-seitenauftakt .fa-vorspann{color:#c0d0d4;max-width:760px}
+.fa-oeffentlich .fa-seitenauftakt h1{line-height:1.1;font-size:clamp(2.5rem,4.8vw,4.2rem)}
+.fa-oeffentlich .fa-formularkarte{border-radius:16px;box-shadow:0 10px 30px #0b172408}
+.fa-oeffentlich .fa-feld input,.fa-oeffentlich .fa-feld select,.fa-oeffentlich .fa-feld textarea{border-radius:7px}
+.fa-oeffentlich .fa-kontaktetikett{border-radius:5px}
+.fa-oeffentlich .fa-formularstatus{border-radius:0 6px 6px 0}
+.fa-oeffentlich .fa-fuss{border-top:1px solid #39404a}
+.fa-oeffentlich .fa-fussraster{grid-template-columns:1.5fr 1fr 1fr;gap:80px}
+.fa-oeffentlich .fa-fuss p{font-size:17px;color:#c0d0d4;line-height:1.65}
+.fa-oeffentlich .fa-fussende{line-height:1.7}
+.fa-hero-neu{background:var(--fa-nacht);color:var(--fa-weiss);padding:64px 0 54px}
+.fa-zielwahl{display:inline-flex;gap:3px;padding:4px;border:1px solid #39404a;border-radius:9px;margin-bottom:38px;max-width:100%}
+.fa-zielwahl a{padding:8px 17px;color:#b8c3ce;font-size:12px;font-weight:600;text-decoration:none;border-radius:5px;white-space:nowrap}
+.fa-zielwahl a[aria-current=page]{background:#27333f;color:#f4f5f4}
+.fa-zielwahl a:hover{color:var(--fa-akzent)}
+.fa-hero-neu .fa-ueberzeile{color:var(--fa-akzent);margin-bottom:24px}
+.fa-hero-neu h1{font-size:clamp(3rem,6.5vw,5.8rem);font-weight:600;line-height:1.08;letter-spacing:-.045em;margin-bottom:35px;max-width:1200px;text-wrap:balance}
+.fa-hero-neu h1>span{display:block}
+.fa-hero-neu .fa-helltext{width:fit-content;max-width:100%}
+.fa-hero-unten{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:75px;align-items:center;margin-top:34px}
+.fa-hero-unten .fa-vorspann{color:#c0d0d4;max-width:665px;margin-bottom:0;font-size:17px;line-height:1.8}
+.fa-hero-aktionen{display:flex;flex-direction:column;align-items:center;gap:16px;min-width:230px}
+.fa-hero-textlink{color:#c0d0d4;font-size:13px;text-decoration:none}
+.fa-hero-textlink:hover{color:var(--fa-akzent);text-decoration:underline}
+.fa-hero-textlink span{margin-left:8px}
+.fa-hero-punkte{display:flex;gap:28px;flex-wrap:wrap;list-style:none;padding:0;margin:27px 0 38px;color:#b8c3ce;font-size:12px}
+.fa-hero-punkte li{display:flex;gap:9px;align-items:center}
+.fa-hero-punkte li:before{content:'';display:block;width:4px;height:4px;border-radius:50%;background:var(--fa-akzent)}
+.fa-rollenraster{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:44px}
+.fa-rolle{border:1px solid #39404a;border-radius:13px;padding:24px;background:#ffffff04}
+.fa-rollenlabel{display:block;font-size:11px;color:#bac6d0;letter-spacing:.05em;margin-bottom:15px}
+.fa-rolle h2{font-size:20px;line-height:1.35;letter-spacing:-.02em;margin-bottom:12px;max-width:275px}
+.fa-rolle p{font-size:13px;line-height:1.75;color:#b8c3ce;margin:0;max-width:310px}
+.fa-rolle-gold{border-color:#8f8060}
+.fa-rolle-gold .fa-rollenlabel{color:var(--fa-akzent)}
+.fa-ueberblick>div:first-child>p:not(.fa-ueberzeile):not(.fa-vorspann){font-size:15px;color:var(--fa-grau);line-height:1.8;margin-bottom:25px}
+.fa-vorteilsraster{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.fa-vorteil{padding:25px;border:1px solid var(--fa-linie);border-radius:12px;background:var(--fa-weiss)}
+.fa-vorteil h3{font-size:18px;line-height:1.3;letter-spacing:-.02em;margin-bottom:12px}
+.fa-vorteil p{font-size:13px;line-height:1.8;color:var(--fa-grau);margin:0}
+.fa-minizeichen{display:block;font-size:11px;color:var(--fa-akzentdunkel);margin-bottom:32px;letter-spacing:.07em}
+.fa-vorteilsraster-breit{grid-template-columns:repeat(4,minmax(0,1fr))}
+.fa-prozessliste{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px;margin:0;padding:0}
+.fa-prozessliste li{border-top:1px solid var(--fa-linie);padding-top:24px}
+.fa-prozessnummer{font-size:38px;font-weight:400;letter-spacing:-.05em;line-height:1;color:var(--fa-akzentdunkel);display:block;margin-bottom:30px}
+.fa-prozessliste h3{font-size:22px;line-height:1.25;letter-spacing:-.025em}
+.fa-prozessliste p{font-size:14px;color:var(--fa-grau);line-height:1.85;margin:0}
+.fa-partnerstreifen{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center}
+.fa-partnerstreifen h2{margin:0}
+.fa-partnerstreifen .fa-ueberzeile{color:var(--fa-akzent)}
+.fa-partnerstreifen .fa-vorspann{font-size:16px}
+.fa-oeffentlich .fa-fragen details{border:1px solid var(--fa-linie);border-radius:9px;margin-bottom:10px;padding:0 22px;background:var(--fa-weiss)}
+.fa-oeffentlich .fa-fragen details:last-child{border-bottom:1px solid var(--fa-linie)}
+.fa-oeffentlich .fa-fragen summary{font-size:15px;line-height:1.5;padding:20px 0}
+.fa-oeffentlich .fa-fragen details p{font-size:14px;line-height:1.8;padding-right:15px;margin-bottom:23px}
+.fa-abschluss{background:var(--fa-nacht);color:white;padding:18px 0 68px}
+.fa-abschluss-innen{padding:56px;border:1px solid #8f8060;border-radius:16px;background:#ffffff03}
+.fa-abschluss .fa-ueberzeile{color:var(--fa-akzent)}
+.fa-abschluss h2{font-size:clamp(2rem,3.7vw,3.2rem);line-height:1.2;max-width:960px;margin-bottom:24px}
+.fa-abschluss p:not(.fa-ueberzeile){max-width:650px;color:#c0d0d4;font-size:16px;line-height:1.8;margin-bottom:28px}
+.fa-hero-setter h1{font-size:clamp(3rem,5.8vw,5.2rem)}
+.fa-hero-setter .fa-hero-punkte{margin-bottom:0}
+.fa-setteraufgaben{list-style:none;margin:0;padding:0}
+.fa-setteraufgaben li{display:flex;gap:22px;padding:24px 0;border-top:1px solid var(--fa-linie)}
+.fa-setteraufgaben li:first-child{padding-top:0;border-top:0}
+.fa-setteraufgaben li>span{font-size:12px;color:var(--fa-akzentdunkel);padding-top:4px}
+.fa-setteraufgaben h3{font-size:21px;line-height:1.3;margin-bottom:10px}
+.fa-setteraufgaben p{font-size:14px;line-height:1.8;color:var(--fa-grau);margin:0}
+.fa-rechnerdetails{border:1px solid var(--fa-linie);border-radius:12px;background:var(--fa-papier);overflow:hidden}
+.fa-rechnerdetails>summary{font-size:14px;font-weight:600;padding:22px 26px;line-height:1.6}
+.fa-rechnerinhalt{padding:0 22px 22px}
+.fa-oeffentlich .fa-rechenflaeche{border-radius:9px;overflow:hidden}
+@media(max-width:1100px){.fa-oeffentlich .fa-navigation{gap:19px}.fa-hero-unten{gap:40px}.fa-oeffentlich .fa-zweiteiler,.fa-partnerstreifen{gap:44px}.fa-vorteil{padding:20px}.fa-vorteilsraster-breit{grid-template-columns:repeat(2,minmax(0,1fr))}.fa-oeffentlich .fa-fussraster{gap:45px}}
+@media(max-width:980px){.fa-oeffentlich .fa-kopfzeile{min-height:86px}.fa-oeffentlich .fa-menuschalter{display:block}.fa-oeffentlich .fa-navigation{display:none;position:absolute;left:0;right:0;top:85px;background:var(--fa-nacht);border-bottom:1px solid #39404a;padding:24px 28px 30px;flex-direction:column;align-items:stretch;gap:22px}.fa-oeffentlich .fa-navigation-offen{display:flex}.fa-oeffentlich .fa-navigation .fa-knopf{align-self:start}.fa-hero-unten{grid-template-columns:1fr;gap:24px}.fa-hero-aktionen{align-items:flex-start;min-width:0;flex-direction:row;gap:25px;align-items:center}.fa-hero-neu h1{font-size:clamp(3rem,7.2vw,4.6rem)}.fa-hero-setter h1{font-size:clamp(3rem,6.2vw,4rem)}.fa-rolle{padding:20px}.fa-rolle h2{font-size:18px}.fa-oeffentlich .fa-zweiteiler.fa-ueberblick{grid-template-columns:1fr;gap:32px}.fa-ueberblick>div:first-child{max-width:750px}.fa-vorteil h3{font-size:20px}}
+@media(max-width:780px){.fa-oeffentlich .fa-kopf .fa-wortmarke img{width:172px;max-height:69px}.fa-oeffentlich .fa-abschnitt{padding-block:58px}.fa-oeffentlich .fa-vorspann{font-size:16px;line-height:1.8}.fa-oeffentlich .fa-zweiteiler,.fa-partnerstreifen{grid-template-columns:1fr;gap:30px}.fa-oeffentlich .fa-seitenauftakt{padding-block:45px}.fa-hero-neu{padding:40px 0 38px}.fa-zielwahl{margin-bottom:30px}.fa-hero-neu .fa-ueberzeile{font-size:10px;line-height:1.7;max-width:330px;margin-bottom:22px;align-items:flex-start}.fa-hero-neu .fa-ueberzeile:before{margin-top:6px;flex-shrink:0}.fa-hero-neu h1,.fa-hero-setter h1{font-size:clamp(2.5rem,7.8vw,3.8rem);letter-spacing:-.045em;margin-bottom:25px;line-height:1.12}.fa-hero-neu h1>span{max-width:100%}.fa-hero-unten{margin-top:25px;gap:25px}.fa-hero-unten .fa-vorspann{font-size:16px}.fa-hero-aktionen{flex-wrap:wrap;gap:18px}.fa-hero-punkte{gap:12px 20px;font-size:11px;margin:25px 0}.fa-rollenraster{grid-template-columns:1fr;gap:12px;margin-top:30px}.fa-rolle{padding:22px}.fa-rollenlabel{margin-bottom:12px}.fa-rolle h2{font-size:20px;max-width:none;margin-bottom:8px}.fa-rolle p{max-width:550px;font-size:13px}.fa-vorteilsraster{gap:12px}.fa-minizeichen{margin-bottom:24px}.fa-vorteil h3{font-size:18px}.fa-prozessliste{grid-template-columns:1fr;gap:25px}.fa-prozessliste li{display:grid;grid-template-columns:45px 1fr;gap:0 18px;padding-top:24px}.fa-prozessnummer{grid-row:span 2;font-size:29px;margin:0;padding-top:3px}.fa-prozessliste h3{font-size:21px;margin-bottom:12px}.fa-prozessliste p{grid-column:2}.fa-abschluss{padding:0 0 45px}.fa-abschluss-innen{padding:30px 25px;border-radius:12px}.fa-abschluss h2{font-size:2.1rem}.fa-abschluss h2 br{display:none}.fa-abschluss .fa-helltext{display:block}.fa-oeffentlich .fa-fussraster{grid-template-columns:1fr 1fr;gap:35px}.fa-oeffentlich .fa-fussraster>div:first-child{grid-column:1/-1}.fa-rechnerdetails>summary{padding:20px;font-size:13px}.fa-rechnerinhalt{padding:0 14px 14px}.fa-oeffentlich .fa-fragen details{padding-inline:18px}}
+@media(max-width:420px){.fa-oeffentlich .fa-kopf .fa-wortmarke img{width:clamp(140px,44vw,172px)}.fa-oeffentlich .fa-kopfzeile{gap:14px}.fa-hero-neu h1,.fa-hero-setter h1{font-size:clamp(2.2rem,9vw,2.9rem);line-height:1.15;letter-spacing:-.04em;text-wrap:normal}.fa-hero-neu .fa-ueberzeile{letter-spacing:.08em}.fa-hero-aktionen{width:100%;flex-direction:column;align-items:stretch;gap:17px}.fa-hero-aktionen .fa-knopf{width:100%}.fa-hero-textlink{text-align:center}.fa-hero-punkte{display:grid;gap:7px}.fa-vorteilsraster,.fa-vorteilsraster-breit{grid-template-columns:1fr}.fa-vorteil{padding:24px}.fa-minizeichen{margin-bottom:18px}.fa-oeffentlich .fa-fussraster{grid-template-columns:minmax(0,1fr);gap:30px}.fa-oeffentlich .fa-seitenauftakt h1{font-size:2.5rem}.fa-oeffentlich .fa-abschnitt h2{font-size:2rem}.fa-abschluss-innen{padding:28px 20px}.fa-abschluss h2{font-size:1.9rem}.fa-abschluss p:not(.fa-ueberzeile){font-size:14px}.fa-abschluss .fa-knopf{width:100%}.fa-oeffentlich .fa-fussende span{overflow-wrap:anywhere}}
