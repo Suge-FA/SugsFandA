@@ -1,4 +1,4 @@
-import { faProjekt, faVerbindungBereit } from './projektwerte.js';
+import { faProjekt, faVerbindungBereit } from './projektwerte.js?v=20261114';
 
 document.querySelectorAll('form[data-fa-anfrage]').forEach((faFormular) => {
   const faStatus = faFormular.querySelector('[data-fa-rueckmeldung]');
