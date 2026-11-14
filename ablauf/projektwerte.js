@@ -1,9 +1,8 @@
 // Nur die Werte DEINES NEUEN Projekts einsetzen. Der öffentliche Schlüssel darf hier stehen.
 // Server-Schlüssel bleiben ausschließlich in den Geheimnissen der eigenen Edge Functions.
 export const faProjekt = Object.freeze({
-  unternehmen: 'Franz Dippel und Alexander Bobykin GbR',
+  unternehmen: 'F&A Sales Consulting',
   kurzname: 'F&A Sales Consulting',
-  inhaber: 'Franz Dippel',
   postfach: 'info@fasalesconsulting.com',
   telefon: '+49 4442 9499987',
   webadresse: 'https://fasalesconsulting.com',
