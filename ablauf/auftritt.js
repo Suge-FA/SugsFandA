@@ -25,7 +25,7 @@ document.querySelectorAll('[data-fa-telefon]').forEach((faVerweis) => {
 
 // Neue Vermittlungskennungen bleiben beim Wechsel zum Formular erhalten. Kein Tracking-Speicher.
 const faAnkunft = new URLSearchParams(location.search);
-document.querySelectorAll('a[data-fa-einstieg]').forEach((faVerweis) => {
+document.querySelectorAll('a[data-fa-setter]').forEach((faVerweis) => {
   const faZiel = new URL(faVerweis.href);
   ['betreuung', 'kampagne'].forEach((faBegriff) => {
     const faInhalt = faAnkunft.get(faBegriff);

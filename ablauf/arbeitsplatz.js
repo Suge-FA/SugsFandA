@@ -53,7 +53,7 @@ async function faAnsichtZeigen() {
   try {
     const faNeuProfil = await faFunktion('fa_mein_profil');
     if (!faNeuProfil || !['inhaber', 'verwaltung', 'recruiting'].includes(faNeuProfil.aufgabe)) {
-      faArbeitsstand.profil = null; await faAbmelden(); faZugangZeigen(); faZugangHinweis('Dieser Zugang ist derzeit nicht freigegeben. Bitte wende dich an Franz.'); return;
+      faArbeitsstand.profil = null; await faAbmelden(); faZugangZeigen(); faZugangHinweis('Dieser Zugang ist derzeit nicht freigegeben. Bitte wende dich an die Zugangsverwaltung.'); return;
     }
     faArbeitsstand.profil = faNeuProfil;
     if (faAnsicht.verwaltung && !faIstVerwaltung()) { location.hash = 'fa-ueberblick'; return; }
@@ -74,7 +74,7 @@ faArbeitsstand.neuLaden = faAnsichtZeigen;
 
 async function faArbeitsbeginn() {
   faArbeitsstand.profil = await faFunktion('fa_mein_profil');
-  if (!faArbeitsstand.profil || !['inhaber', 'verwaltung', 'recruiting'].includes(faArbeitsstand.profil.aufgabe)) throw new Error('Dein Zugang ist noch nicht für die Teamzentrale freigeschaltet. Bitte wende dich an Franz.');
+  if (!faArbeitsstand.profil || !['inhaber', 'verwaltung', 'recruiting'].includes(faArbeitsstand.profil.aufgabe)) throw new Error('Dein Zugang ist noch nicht für die Teamzentrale freigeschaltet. Bitte wende dich an die Zugangsverwaltung.');
   document.getElementById('fa-personenanzeige').textContent = faArbeitsstand.profil.anzeigename;
   document.getElementById('fa-rollenanzeige').textContent = faAufgaben[faArbeitsstand.profil.aufgabe];
   faZugangskarte.hidden = true; faArbeitsbereich.hidden = false;
@@ -95,7 +95,7 @@ document.getElementById('fa-zugangshilfe').addEventListener('click', async (faAk
   if (!faPostfach.value.trim() || !faPostfach.checkValidity()) { faZugangHinweis('Trage zuerst deine E-Mail-Adresse ein.'); faPostfach.focus(); return; }
   faAktion.currentTarget.disabled = true;
   try { await faPasswortAnfordern(faPostfach.value.trim()); faZugangHinweis('Falls ein passender Zugang besteht, erhältst du eine E-Mail zum Zurücksetzen.'); }
-  catch { faZugangHinweis('Der Vorgang konnte nicht abgeschlossen werden. Bitte wende dich an Franz.'); }
+  catch { faZugangHinweis('Der Vorgang konnte nicht abgeschlossen werden. Bitte wende dich an die Zugangsverwaltung.'); }
   finally { document.getElementById('fa-zugangshilfe').disabled = false; }
 });
 faPasswortformular.addEventListener('submit', async (faAktion) => {
@@ -122,7 +122,7 @@ window.addEventListener('hashchange', faAnsichtZeigen);
 
 if (!faVerbindungBereit()) {
   faAnmeldeformular.querySelectorAll('input,button').forEach((faEingabe) => { faEingabe.disabled = true; });
-  faZugangHinweis('Dieser Arbeitsbereich wird neu eingerichtet. Sobald die Verbindung freigegeben ist, kannst du dich hier anmelden. Ansprechpartner ist Franz Dippel.');
+  faZugangHinweis('Dieser Arbeitsbereich wird neu eingerichtet. Sobald die Verbindung freigegeben ist, kannst du dich hier anmelden. Bei Fragen erreichst du die Zugangsverwaltung über info@fasalesconsulting.com.');
 } else {
   try {
     if (faRueckkehrLesen()) {
