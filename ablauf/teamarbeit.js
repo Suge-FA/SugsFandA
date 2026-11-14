@@ -1,6 +1,6 @@
-import { faProjekt } from './projektwerte.js';
-import { faZeilen, faEinladen } from './zugang.js';
-import { faArbeitsstand, faElement, faKnopf, faBereichskopf, faAufgaben, faMarkierung, faDatumstext, faGeldtext, faPersonentext, faPersonenoptionen, faInhaltsoptionen, faInhaltstext, faGefilterteTabelle, faBearbeiten, faAusfuehren, faKurzMelden, faDialogOeffnen } from './arbeitsbausteine.js';
+import { faProjekt } from './projektwerte.js?v=20261114';
+import { faZeilen, faEinladen } from './zugang.js?v=20261114';
+import { faArbeitsstand, faElement, faKnopf, faBereichskopf, faAufgaben, faMarkierung, faDatumstext, faGeldtext, faPersonentext, faPersonenoptionen, faInhaltsoptionen, faInhaltstext, faGefilterteTabelle, faBearbeiten, faAusfuehren, faKurzMelden, faDialogOeffnen } from './arbeitsbausteine.js?v=20261114';
 
 function faTeamBearbeiten(faAlt = {}) {
   const faRollen = Object.entries(faAufgaben).filter(([faCode]) => faCode !== 'inhaber' || faAlt.aufgabe === 'inhaber').filter(([faCode]) => faArbeitsstand.profil.aufgabe === 'inhaber' || !['inhaber', 'verwaltung'].includes(faCode));
@@ -13,7 +13,7 @@ function faTeamBearbeiten(faAlt = {}) {
 }
 export async function faTeamAnzeigen() {
   const faPersonen = await faZeilen('fa_personen');
-  return faElement('section', {}, faBereichskopf('Menschen im Team', 'Zuständigkeiten pflegen und persönliche Zugänge freigeben. Verwaltungszugänge legt ausschließlich Franz als Inhaber an.', faKnopf('Person hinzufügen', () => faTeamBearbeiten(), '')),
+  return faElement('section', {}, faBereichskopf('Menschen im Team', 'Zuständigkeiten pflegen und persönliche Zugänge freigeben. Verwaltungszugänge legt ausschließlich die Inhaberrolle an.', faKnopf('Person hinzufügen', () => faTeamBearbeiten(), '')),
     faGefilterteTabelle(faPersonen, [
       { name: 'anzeigename', titel: 'Person' }, { name: 'postfach', titel: 'E-Mail' },
       { name: 'aufgabe', titel: 'Zuständigkeit', anzeigen: (faZeile) => faAufgaben[faZeile.aufgabe] },
@@ -61,7 +61,7 @@ export async function faKampagnenAnzeigen() {
       { name: 'betreuung', titel: 'Betreuung', anzeigen: (faZeile) => faPersonentext(faZeile.betreuung) },
       { name: 'inhaltspartner', titel: 'Inhaltspartner', anzeigen: (faZeile) => faInhaltstext(faZeile.inhaltspartner) },
       { name: 'ausgaben_cent', titel: 'Ausgaben', anzeigen: (faZeile) => faGeldtext(faZeile.ausgaben_cent) },
-    ], (faZeile) => [faKnopf('Bearbeiten', () => faKampagneBearbeiten(faZeile)), faKnopf('Formularlink', () => faLinkZeigen(faProjekt.webadresse + '/einstieg.html?kampagne=' + faZeile.kennung))]));
+    ], (faZeile) => [faKnopf('Bearbeiten', () => faKampagneBearbeiten(faZeile)), faKnopf('Formularlink', () => faLinkZeigen(faProjekt.webadresse + '/setter/?kampagne=' + faZeile.kennung))]));
 }
 
 function faBeitragBearbeiten(faAlt = {}) {
@@ -80,7 +80,7 @@ export async function faBeitraegeAnzeigen() {
       { name: 'betreuung', titel: 'Verantwortlich', anzeigen: (faZeile) => faPersonentext(faZeile.betreuung) },
       { name: 'angelegt', titel: 'Erfasst', anzeigen: (faZeile) => faDatumstext(faZeile.angelegt) },
     ], (faZeile) => [faKnopf('Bearbeiten', () => faBeitragBearbeiten(faZeile)), faKnopf('Antwortbaustein', () => {
-      const faBaustein = faElement('textarea', { class: 'fa-linkfeld', rows: 7, 'aria-label': 'Bearbeitbarer Antwortentwurf', value: 'Danke für dein Interesse. Bei F&A geht es um die selbstständige Ansprache von Geschäftskunden und die Vereinbarung von Beratungsterminen. Wenn du die Tätigkeit kennenlernen möchtest, findest du hier die Möglichkeit zum persönlichen Austausch: ' + faProjekt.webadresse + '/einstieg.html?betreuung=' + faArbeitsstand.profil.vermittlungscode });
+      const faBaustein = faElement('textarea', { class: 'fa-linkfeld', rows: 7, 'aria-label': 'Bearbeitbarer Antwortentwurf', value: 'Danke für dein Interesse. Bei F&A geht es um die selbstständige Ansprache von Geschäftskunden und die Vereinbarung von Beratungsterminen. Wenn du die Tätigkeit kennenlernen möchtest, findest du hier die Möglichkeit zum persönlichen Austausch: ' + faProjekt.webadresse + '/setter/?betreuung=' + faArbeitsstand.profil.vermittlungscode });
       faDialogOeffnen('Antwort selbst formulieren', faElement('p', { class: 'fa-hinweis' }, 'Ein fester Textbaustein zur eigenen Bearbeitung. Es wird kein KI-Dienst aufgerufen und nichts automatisch veröffentlicht.'), faBaustein);
     })]));
 }
@@ -94,7 +94,7 @@ export function faLinkZeigen(faAdresse) {
     }));
 }
 export async function faLinksAnzeigen() {
-  const faLink = faProjekt.webadresse + '/einstieg.html?betreuung=' + faArbeitsstand.profil.vermittlungscode;
+  const faLink = faProjekt.webadresse + '/setter/?betreuung=' + faArbeitsstand.profil.vermittlungscode;
   return faElement('section', {}, faBereichskopf('Mein persönlicher Einstieg', 'Über diese Adresse eingehende Kennenlernanfragen werden deinem Profil zugeordnet.'),
     faElement('div', { class: 'fa-datenkarte' }, faElement('h2', {}, 'Dein Formularlink'), faElement('input', { class: 'fa-linkfeld', readOnly: true, value: faLink, 'aria-label': 'Dein Formularlink' }),
       faElement('div', { class: 'fa-aktionen' }, faKnopf('Link anzeigen und kopieren', () => faLinkZeigen(faLink))),

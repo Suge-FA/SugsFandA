@@ -1,4 +1,4 @@
-import { faProjekt } from './projektwerte.js';
+import { faProjekt } from './projektwerte.js?v=20261114';
 
 const faSchalter = document.querySelector('[data-fa-menuschalter]');
 const faNavigation = document.querySelector('[data-fa-navigation]');
@@ -25,7 +25,7 @@ document.querySelectorAll('[data-fa-telefon]').forEach((faVerweis) => {
 
 // Neue Vermittlungskennungen bleiben beim Wechsel zum Formular erhalten. Kein Tracking-Speicher.
 const faAnkunft = new URLSearchParams(location.search);
-document.querySelectorAll('a[data-fa-einstieg]').forEach((faVerweis) => {
+document.querySelectorAll('a[data-fa-setter]').forEach((faVerweis) => {
   const faZiel = new URL(faVerweis.href);
   ['betreuung', 'kampagne'].forEach((faBegriff) => {
     const faInhalt = faAnkunft.get(faBegriff);
@@ -33,3 +33,11 @@ document.querySelectorAll('a[data-fa-einstieg]').forEach((faVerweis) => {
   });
   faVerweis.href = faZiel.href;
 });
+
+// Die Sprungmarke der Fehlerseite bleibt auf der aufgerufenen Adresse, auch bei gesetzter Basisadresse.
+const faSprungverweis = document.querySelector('.fa-sprung');
+if (faSprungverweis && document.getElementById('fa-fehlerbasis')) {
+  const faDiesesDokument = new URL(location.href);
+  faDiesesDokument.hash = faSprungverweis.getAttribute('href').replace(/^#/, '');
+  faSprungverweis.href = faDiesesDokument.href;
+}

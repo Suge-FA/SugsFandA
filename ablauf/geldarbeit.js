@@ -1,5 +1,5 @@
-import { faZeilen, faFunktion, faZahlungMitBelegSpeichern, faBelegadresse, faPasswortErsetzen } from './zugang.js';
-import { faArbeitsstand, faElement, faKnopf, faBereichskopf, faIstVerwaltung, faGeldtext, faDatumstext, faPersonentext, faInhaltstext, faMarkierung, faGefilterteTabelle, faTabelle, faBearbeiten, faGrundErfragen, faAusfuehren, faDialogOeffnen, faKurzMelden } from './arbeitsbausteine.js';
+import { faZeilen, faFunktion, faZahlungMitBelegSpeichern, faBelegadresse, faPasswortErsetzen } from './zugang.js?v=20261114';
+import { faArbeitsstand, faElement, faKnopf, faBereichskopf, faIstVerwaltung, faGeldtext, faDatumstext, faPersonentext, faInhaltstext, faMarkierung, faGefilterteTabelle, faTabelle, faBearbeiten, faGrundErfragen, faAusfuehren, faDialogOeffnen, faKurzMelden } from './arbeitsbausteine.js?v=20261114';
 
 export async function faZahlungenAnzeigen() {
   const [faZahlungen, faKontakte, faParameter] = await Promise.all([faZeilen('fa_zahlungseingaenge'), faZeilen('fa_kontakte'), faZeilen('fa_parameter', { order: 'kennung.asc' })]);

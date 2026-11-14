@@ -1,4 +1,4 @@
-import { faSpeichern } from './zugang.js';
+import { faSpeichern } from './zugang.js?v=20261114';
 
 export const faArbeitsstand = { profil: null, personen: [], inhalte: [], neuLaden: () => {} };
 export const faPhasen = { neu: 'Neu eingegangen', erreicht: 'Kontakt hergestellt', gespraech: 'Im Austausch', einarbeitung: 'In Einarbeitung', aktiv: 'Zusammenarbeit aktiv', abgesagt: 'Beendet / abgesagt' };
